@@ -1,0 +1,164 @@
+.main-container {
+  margin: 20px;
+}
+
+.main-title {
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 0;
+  color: #23452d;
+}
+
+.main-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #23452d;
+}
+
+.movie-title-search-container {
+  padding: 50px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.search-title{
+  font-size: 22px;
+  text-align: center;
+  color: #4d734d;
+  font-family: 'Space Mono', monospace;
+}
+
+.search-input {
+  padding: 12px 24px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 1px solid white;
+  font-family: 'Space Mono', monospace;
+}
+input::placeholder {
+  color: white;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: auto;
+}
+
+.body-container .container {
+  width: 50%;
+}
+
+.results-container {
+  padding-right: 10px;
+}
+
+.nominations-container {
+  padding-left: 10px;
+}
+
+.body-container .title {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  color: #4d734d;
+}
+
+.list-container {
+  font-family: 'Roboto Mono', monospace;
+  color: #373837;
+  padding-left: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  height: 20px;
+  font-size: 12px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  border: 1px solid #373837;
+}
+
+.nominate-button, .remove-button {
+  height: 20px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 50px;
+  border: 1px solid #373837;
+}
+
+.nominate-button:hover, .remove-button:hover, .result-button:hover {
+  background: #b0d1b0;
+}
+
+.banner {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  top: 0;
+  width: 100%;
+  text-align:center;
+  background-color: white;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner button {
+  background: transparent;
+  margin-left: 5px;
+}
+
+.banner button:hover {
+  background: #f0d3de;
+}
+
+.banner span {
+  text-align: center;
+}
+
+.empty-container {
+  font-family: 'Roboto Mono', monospace;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #373837;
+  font-size: 13px;
+}
+
+.results-container {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.nomination-result {
+  justify-content: space-between;
+  display: flex;
+  width: 75%;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.nomination-result img {
+  height: 300px;
+}
+
+.buttons-container {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.result-button{
+  font-size: 15px;
+  height: 30px;
+  background: transparent;
+}
+

@@ -1,0 +1,78 @@
+<div class="banner" *ngIf="showNominationsBanner()"><span>Nominations list completed! </span>
+  <button (click)="viewNominationResults()">View final results</button>
+</div>
+
+<div class="main-container">
+  <h3 class="main-title">The Shoppies</h3>
+  <p class="main-description">Movie awards for Entrepeneurs</p>
+
+  <div *ngIf="!showFinalNominations; else finalNominations" class="picking-nominations-container">
+    <div class="movie-title-search-container">
+      <label class="search-title">Search for movie titles</label>
+      <input class="search-input" type="text" placeholder="Search..."
+             (keyup)="updateSearchTerm($event.target.value)"/>
+    </div>
+
+    <div class="body-container">
+      <div class="results-container container">
+        <div class="title">Results for {{searchTerm$.value || "..."}}</div>
+        <div *ngIf="movieDataResults$ | async as movieDataResults">
+          <ul *ngIf="movieDataResults.length > 0; else noResults" class="list-container">
+            <li *ngFor="let movie of movieDataResults">
+              • {{movie.title}} ({{movie.year}})
+              <button (click)="addNomination(movie)"
+                      [disabled]="disableNominationsButton(movie.imdbID)"
+                      class="nominate-button">Nominate
+              </button>
+            </li>
+          </ul>
+
+          <ng-template #noResults>
+            <div class="empty-container">
+              No results. Try again.
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+
+      <div class="nominations-container container">
+        <div class="title">Nominations</div>
+        <ul class="list-container">
+          <li *ngFor="let movie of nominations">
+            • {{movie.title}} ({{movie.year}})
+            <button (click)="removeNomination(movie)"
+                    class="remove-button">Remove
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #finalNominations>
+    <div class="movie-title-search-container">
+      <label class="search-title">Final nominations</label>
+    </div>
+
+    <div class="body-container">
+      <div class="results-container">
+        <div class="nomination-result" *ngFor="let movie of nominations">
+          {{movie.title}} ({{movie.year}})
+          <img [src]="movie.poster" [alt]="'Movie poster of ' + movie.title"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons-container">
+      <button class="result-button"
+              (click)="backToNominations()">Back to nominations
+      </button>
+      <button class="result-button"
+              (click)="resetNominations()">Reset nominations
+      </button>
+    </div>
+  </ng-template>
+</div>
+
+
